@@ -4,20 +4,18 @@ const BD = require('../config/config.js');
 
 //traer datos 
 
-router.get('/empleados', async(req,res)=>{
+router.get('/empleados', async (req,res)=>{
 
-    sql = "SELECT id_persona_empleado, contraseña  FROM empleados;";
+    sql = "SELECT contraseña FROM persona_empleado";
 
-    let  result = await BD.Open(sql,[],false);
-    let Results = [];
+    let result = await BD.Open(sql,[],false);
+    Results = [];
 
 
     //TODO: se debe generar una query donde tome id, nombre, pw, tipo_empleado
     result.rows.map(empleado=>{
         let schema = {
-            "id" : empleado[0],
-            "contrasena" : empleado[1],
-        
+            "contrasena" : empleado[0],
         }
 
         Results.push(schema);
