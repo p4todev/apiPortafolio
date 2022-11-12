@@ -11,6 +11,7 @@ console.log(BD)
 //imports
 
 const testRoutes = require('../src/routes/platosRoutes');
+const empleados = require('../src/routes/empleadosRoutes');
 
 //settings
 
@@ -20,7 +21,7 @@ app.use(express.json());
 
 //routes 
 app.use(testRoutes);
-
+app.use(empleados);
 
 
 
