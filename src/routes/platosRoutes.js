@@ -28,5 +28,12 @@ router.get('/test', async(req,res)=>{
     res.json(Results);
 })
 
+//enviar pedido
+router.post('/test', async (req,res)=>{
+    //TODO: se debe ingresar los pedidos de testeo, 
+    // este metodo debe ingresar los datos mas relevantes
+    //para realizar pruebas
+});
+
 
 module.exports = router;

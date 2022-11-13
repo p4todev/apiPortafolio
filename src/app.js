@@ -12,7 +12,7 @@ console.log(BD)
 
 const testRoutes = require('../src/routes/platosRoutes');
 const empleados = require('../src/routes/empleadosRoutes');
-
+const mesas = require('../src/routes/MesasRoutes')
 //settings
 
 //middlewares
@@ -22,6 +22,7 @@ app.use(express.json());
 //routes 
 app.use(testRoutes);
 app.use(empleados);
+app.use(mesas);
 
 
 
