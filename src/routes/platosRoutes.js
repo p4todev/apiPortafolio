@@ -3,22 +3,19 @@ const router = Router();
 const BD = require('../config/config.js');
 
 //traer datos
-router.get('/test', async(req,res)=>{
-    sql = "SELECT * FROM platillo";
+router.get('/platos', async(req,res)=>{
+
+    sql = "SELECT ID_PLATO,NOMBRE,PRECIO,FOTO FROM PLATO WHERE FOTO IS NOT NULl";
 
     let result = await BD.Open(sql,[],false);
     Results = [];
 
     result.rows.map(test=>{
         let schema = {
-            "id" : test[0],
-            "nombre" : test[1],
-            "activo" : test[2],
-            "tipo_pe" : test[3],
-            "tipo_pro" : test[4],
-            "tipo_an" : test[5],
-            "receta" : test[6],
-            "stock" : test[7]
+            "ID_PLATO" : test[0],
+            "NOMBRE" : test[1],
+            "PRECIO" : test[2],
+            "FOTO" : test[3],
         }
 
         Results.push(schema);

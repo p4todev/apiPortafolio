@@ -14,15 +14,20 @@ router.get('/empleados', async (req,res)=>{
 
     //TODO: se debe generar una query donde tome id, nombre, pw, tipo_empleado
     result.rows.map(empleado=>{
+        //TODO: se debe mejorar la consulta para que obtenga
+        //los datos (rut,contrasena) esto se debe verificar
+        //para realizar el inicio de sesion
         let schema = {
-            "contrasena" : empleado[0],
+            "rut " : empleado[0],
+            "contrasena" : empleado[1],
+
         }
 
         Results.push(schema);
     })
-
     res.json(Results);
-
 })
+
+
 
 module.exports = router;
